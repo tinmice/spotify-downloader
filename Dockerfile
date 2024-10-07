@@ -32,11 +32,16 @@ RUN poetry install
 # Create music directory
 RUN mkdir /music
 
+# to map sync file
+RUN mkdir /sync 
+
 # Create a volume for the output directory
 VOLUME /music
+VOLUME /sync
 
 # Change CWD to /music
-WORKDIR /music
+# WORKDIR /music
 
 # Entrypoint command
 ENTRYPOINT ["poetry", "run", "spotdl"]
+# ENTRYPOINT ["sleep", "infinity"] # use for trouble shooting, can exec into container

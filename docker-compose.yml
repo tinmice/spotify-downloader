@@ -1,6 +1,9 @@
-version: "3"
 services:
-  spotdl:
-    image: "spotdl/spotify-downloader"
+  spotdl-ben:
+    image: "ghcr.io/tinmice/spotify-downloader/spotdl"
     volumes:
-      - .:/music
+      - /mnt/user/ardanan/Music/Ripped/Ben:/music
+      - /mnt/user/appdata/spotify-downloader/ben/config.json:/root/.spotdl/config.json
+      - /mnt/user/appdata/spotify-downloader/ben/cookies.txt:/cookies.txt
+
+# not used, originally created for ease of testig on local instance.
